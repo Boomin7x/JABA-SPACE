@@ -5,29 +5,35 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import enTranslation from './locales/en/translation.json';
 import esTranslation from './locales/es/translation.json';
 
-i18n
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    resources: {
-      en: {
-        translation: enTranslation,
-      },
-      es: {
-        translation: esTranslation,
-      },
-    },
-    fallbackLng: 'en',
-    debug: true,
+i18n.use(LanguageDetector)
+    .use(initReactI18next)
+    .init({
+        resources: {
+            en: {
+                translation: enTranslation,
+            },
+            es: {
+                translation: esTranslation,
+            },
+        },
+        fallbackLng: 'en',
+        debug: true,
 
-    detection: {
-      order: ['querystring', 'cookie', 'localStorage', 'sessionStorage', 'navigator', 'htmlTag'],
-      lookupQuerystring: 'lng',
-    },
+        detection: {
+            order: [
+                'querystring',
+                'cookie',
+                'localStorage',
+                'sessionStorage',
+                'navigator',
+                'htmlTag',
+            ],
+            lookupQuerystring: 'lng',
+        },
 
-    interpolation: {
-      escapeValue: false,
-    },
-  });
+        interpolation: {
+            escapeValue: false,
+        },
+    });
 
 export default i18n;
